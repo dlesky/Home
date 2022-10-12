@@ -50,7 +50,7 @@
     <p>For the last two months I’ve been studying data science in Python, and only tentatively looking over front-end courses. With a bootcamp looming next month, I made the switch this week. Brian Holt’s <a href="https://btholt.github.io/intro-to-web-dev-v2/intro">intro to front-end development</a> has been great. His style is practical and involves lots of hand-on work to keep things engaging. The course’s first project involves building something that resembles the OSX desktop calculator. I have embedded it in this page, so you can explore its functionality.</p>
 
 <p style="text-align:center"> <br />   
-<iframe src="https://dlesky.github.io/frontEnd/index.html" style="width:360px; height:470px;border:none;"></iframe>
+<iframe src="https://dlesky.github.io/frontEnd/index.html" style="width:390px; height:520px;border:none;"></iframe>
 </p>
 
 <h3 style="text-align:left; text-decoration:underline">The CSS</h3>
@@ -80,10 +80,27 @@
 
 <p>The ‘eye-dropper’ tool, which comes with OSX, was very useful in getting the colors right. I used the <em>:</em>active selector to faciliate the color change on mouse-click. Brian implements the :hover selector in his version but this functionality wasn’t inherent in the OSX version, so I skipped it.</p>
 
-<h3 style="text-align:left; text-decoration:underline">The Logic</h3>
-<p>The logic was a bit harder than I expected. It was also more interesting. It got me thinking about ‘states’. After spending two months scripting in Python, this was novel. Basically, what the calculator is <strong><em>supposed to do</em></strong> is determined by prior inputs and these need to be tracked.</p>
+<h3 style="text-align:left; text-decoration:underline">Event Listening</h3>
+<p>DOM, event listening, querySelector – all completely new, but empowering concepts. To manage inputs, I used the event listening functionality at the document level and then used event delegation to manage the calculator window and logic. I used the includes() method to determine to what class an input belongs, which involved hard-coding some arrays (e.g. binaryOperatorArray below is [“*”, “/”, “-“, “+”,]).</p>
 
-<p>I kept track of four variables in the following JS object. I have tried to be a good JS programmer and use camelCase but occasionally fail ;)</p>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">mathOperator</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">innerText</span><span class="p">;</span> 
+    <span class="k">if</span> <span class="p">(</span><span class="nx">calc</span><span class="p">.</span><span class="nx">binaryOperatorArray</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">mathOperator</span><span class="p">))</span> <span class="p">{</span> 
+        <span class="k">if</span> <span class="p">(</span><span class="nx">calc</span><span class="p">.</span><span class="nx">primedToCalculate</span> <span class="o">===</span> <span class="kc">true</span><span class="p">)</span> <span class="p">{</span> <span class="c1">//let's do math </span>
+            <span class="nx">output</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="nx">compute</span><span class="p">(</span><span class="nx">calc</span><span class="p">.</span><span class="nx">lastBinaryOperator</span><span class="p">,</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">calc</span><span class="p">.</span><span class="nx">firstOperand</span><span class="p">),</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">output</span><span class="p">.</span><span class="nx">textContent</span><span class="p">))</span>
+        <span class="p">}</span>
+        <span class="nx">calc</span><span class="p">.</span><span class="nx">firstOperand</span> <span class="o">=</span> <span class="nx">output</span><span class="p">.</span><span class="nx">textContent</span><span class="p">;</span>
+        <span class="nx">calc</span><span class="p">.</span><span class="nx">lastBinaryOperator</span> <span class="o">=</span> <span class="nx">mathOperator</span><span class="p">;</span>
+        <span class="nx">calc</span><span class="p">.</span><span class="nx">last_input</span> <span class="o">=</span> <span class="nx">mathOperator</span><span class="p">;</span>
+        <span class="nx">calc</span><span class="p">.</span><span class="nx">primedToCalculate</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">});</span></code></pre></figure>
+
+<h3 style="text-align:left; text-decoration:underline">The Logic</h3>
+<p>The logic was a bit harder than I expected. It was also more interesting. It got me thinking about ‘states’. After spending two months scripting in Python, this was novel. Basically, how the calculator reacts to input is determined by prior inputs and these need to be tracked. 
+The required conditions to ‘calculate’ are fufilled when the final characters in the input string have the following pattern: (number,operator, number,operator || equals). Without this information, the calculator doesn’t know how to interpret equals or an operator. The sequence (number,operator,number) ‘primes’ the calculator to calculate. A math operator or equals, both trigger a calculation.</p>
+
+<p>I kept track of four variables in the following JS object. I have tried to be a good JS programmer and use camelCase but occasionally fail :)</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">const</span> <span class="nx">calc</span> <span class="o">=</span> <span class="p">{</span>
     <span class="na">firstOperand</span><span class="p">:</span> <span class="dl">"</span><span class="s2">0</span><span class="dl">"</span><span class="p">,</span>
@@ -101,7 +118,9 @@
     <span class="nx">calc</span><span class="p">.</span><span class="nx">last_input</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">0</span><span class="dl">"</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>Well, I could go on about this calculator for another couple pages, but time to learn something new! You can access my full code at <a href="https://github.com/dlesky/frontEnd">my repo</a>.
+<p>Well, I could go on about this calculator for another couple pages, but time to learn something new! Manging the display was fairly straightforward. It has some logic to prevent leading zeros or multiple decimal points. It concatenates the string, unless the previous input was operator or equals, in which case it clears the display and starts fresh.</p>
+
+<p>You can access my full code at <a href="https://github.com/dlesky/frontEnd">my repo</a>.
 Thanks for reading!</p>
 
   </div><a class="u-url" href="/home/jekyll/update/2022/10/12/OSX-calc.html" hidden></a>
