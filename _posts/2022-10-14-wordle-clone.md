@@ -7,18 +7,20 @@ categories: jekyll update
 
 The final project in Brian Holt's [intro to front-end development](https://btholt.github.io/intro-to-web-dev-v2/intro) is a Wordle clone. It requires you to learn how to access JSON formatted data via an API and post data to an API to validate it. Both the CSS and Javascript took me long than expected. Aside from some of the CSS animations that are present in Wordle and data-tracking features, it's pretty close. At some point I would like to go back and:
 
-1) Fix the CSS animations (the boxes should change shape when you type and they should flip after you hit enter.)
-2) Use animations instead of alert boxes, which are mildly obnoxious. 
-3) Implement the IP address tracking feature that limits you to one attempt per day. 
-4) With IP address tracking, it would make sense to include the multi-day data tracking features present in the actual version. 
-5) Go back and clean up the code to make it more modular. 
-
 <p style="text-align:center"> <br>   
 <iframe
   src="https://dlesky.github.io/wordle_clone/index.html"
   style="width:700px; height:700px;border:none;"
 ></iframe>
 </p>
+
+
+1) Fix the CSS animations (the boxes should change shape when you type and they should flip after you hit enter.)
+2) Use animations instead of alert boxes, which are mildly obnoxious. 
+3) Implement the IP address tracking feature that limits you to one attempt per day. 
+4) With IP address tracking, it would make sense to include the multi-day data tracking features present in the actual version. 
+5) Go back and clean up the code to make it more modular. 
+
 
 The thing that tripped me up the most was not being able to modify variables outside of the async function. This forced me to make the whole program run inside an async function. I'm sure there are other ways to do this. I've only scratched the surface of async and APIs. I think I spent at least two hours struggling to try to find a way to do this before giving up. I'll write another blog post on async functions dissecting the options.
 
