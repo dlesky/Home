@@ -6,7 +6,8 @@ categories: jekyll update
 ---
 The final project in Brian Holt's [intro to front-end development](https://btholt.github.io/intro-to-web-dev-v2/intro) is a Wordle clone. It requires you to learn how to access JSON formatted data via an API and post data to an API to validate it. 
 
-Here it is! [Access the source here](https://github.com/dlesky/wordle_clone)
+Here it is! [Here is the source code](https://github.com/dlesky/wordle_clone)
+[Here is the game on its own page](https://dlesky.github.io/wordle_clone/index.html)
 
 <p style="text-align:center"> <br>   
 <iframe
@@ -27,7 +28,7 @@ Aside from some of the CSS animations that are present in Wordle and data-tracki
 7) Change color of keys to 'knock out' letters that have been used already. 
 8) You have to click on the app's window to be able to enter input via the keyboard. There must be a way to fix this. 
 
-<u>Async and scope </u>
+<u>Async and scope: </u>
 The thing that tripped me up the most was not being able to modify variables outside of the async function. This forced me to make the whole program run inside an async function. I'm sure there are other ways to do this. I've only scratched the surface of async and APIs. I think I spent at least two hours struggling to try to find a way to do this before giving up. I'll write another blog post on async functions dissecting the options.
 
 {% highlight javascript %}
@@ -41,7 +42,7 @@ async function init() {
 }
 {% endhighlight %}
 
-<u>Conditional OR statements </u>
+<u>Conditional OR statements: </u>
 I also lost some time to the following bug. 
 
 {% highlight javascript %}
