@@ -17,11 +17,11 @@ The final project in Brian Holt's [intro to front-end development](https://bthol
 </p>
 
 
-[Click here to access the game on its own page.](https://dlesky.github.io/wordle_clone/index.html)
+<a href = "https://dlesky.github.io/wordle_clone/index.html" color = "red"> Click here to access the game on its own page </a>
 <break>
 <a href = "https://github.com/dlesky/wordle_clone" color = "red"> Here is the source code </a>
 
-
+<break>
 
 Aside from some of the CSS animations that are present in Wordle and data-tracking features, it's pretty close. At some point I would like to go back and:
 
@@ -32,7 +32,6 @@ Aside from some of the CSS animations that are present in Wordle and data-tracki
 <li>With IP address tracking, it would make sense to include the multi-day data tracking features present in the actual version. </li>
 <li>Go back and clean up the code to make it more modular. </li>
 <li>Prevent new input after you win. </li>
-<li>Change color of keys to 'knock out' letters that have been used already. </li>
 <li>You have to click on the app's window to be able to enter input via the keyboard. There must be a way to fix this. </li>
 </ol>
 
