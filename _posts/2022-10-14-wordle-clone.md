@@ -19,7 +19,7 @@ The final project in Brian Holt's [intro to front-end development](https://bthol
 
 [Click here to access the game on its own page.](https://dlesky.github.io/wordle_clone/index.html)
 <break>
-[Here is the source code](https://github.com/dlesky/wordle_clone)
+<a href = "https://github.com/dlesky/wordle_clone" color = "red"> Here is the source code </a>
 
 
 
