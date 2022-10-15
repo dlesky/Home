@@ -22,14 +22,16 @@ The final project in Brian Holt's [intro to front-end development](https://bthol
 
 Aside from some of the CSS animations that are present in Wordle and data-tracking features, it's pretty close. At some point I would like to go back and:
 
-1) Fix the CSS animations (the boxes should change shape when you type and they should flip after you hit enter.)
-2) Use animations instead of alert boxes, which are mildly obnoxious. 
-3) Implement the IP address tracking feature that limits you to one attempt per day. 
-4) With IP address tracking, it would make sense to include the multi-day data tracking features present in the actual version. 
-5) Go back and clean up the code to make it more modular. 
-6) Prevent new input after you win. 
-7) Change color of keys to 'knock out' letters that have been used already. 
-8) You have to click on the app's window to be able to enter input via the keyboard. There must be a way to fix this. 
+<ol>
+<li>Fix the CSS animations (the boxes should change shape when you type and they should flip after you hit enter.)</li>
+<li>Use animations instead of alert boxes, which are mildly obnoxious. </li>
+<li>Implement the IP address tracking feature that limits you to one attempt per day. </li>
+<li>With IP address tracking, it would make sense to include the multi-day data tracking features present in the actual version. </li>
+<li>Go back and clean up the code to make it more modular. </li>
+<li>Prevent new input after you win. </li>
+<li>Change color of keys to 'knock out' letters that have been used already. </li>
+<li>You have to click on the app's window to be able to enter input via the keyboard. There must be a way to fix this. </li>
+</ol>
 
 <u>Async and scope: </u>
 The thing that tripped me up the most was not being able to modify variables outside of the async function. This forced me to make the whole program run inside an async function. I'm sure there are other ways to do this. I've only scratched the surface of async and APIs. I think I spent at least two hours struggling to try to find a way to do this before giving up. I'll write another blog post on async functions dissecting the options.
