@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Week 1: Wordle Clone"
+title:  "Wordle Clone"
 date:   2022-10-14 3:25:00 -0600
 categories: jekyll update
 ---
@@ -8,9 +8,6 @@ The final project in Brian Holt's [intro to front-end development](https://bthol
 
 <h3>Here it is! </h3>
 <break>
-[<h3>Here is the source code</h3>](https://github.com/dlesky/wordle_clone)
-<break>
-[<h3>Here is the game on its own page</h3>](https://dlesky.github.io/wordle_clone/index.html)
 
 <p style="text-align:center"> <br>   
 <iframe
@@ -18,6 +15,12 @@ The final project in Brian Holt's [intro to front-end development](https://bthol
   style="width:100%; height:700px;border:none;"
 ></iframe>
 </p>
+
+
+[Click here to access the game on its own page.](https://dlesky.github.io/wordle_clone/index.html)
+<break>
+[Here is the source code](https://github.com/dlesky/wordle_clone)
+
 
 
 Aside from some of the CSS animations that are present in Wordle and data-tracking features, it's pretty close. At some point I would like to go back and:
