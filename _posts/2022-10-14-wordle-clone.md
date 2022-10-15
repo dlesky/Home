@@ -6,8 +6,10 @@ categories: jekyll update
 ---
 The final project in Brian Holt's [intro to front-end development](https://btholt.github.io/intro-to-web-dev-v2/intro) is a Wordle clone. It requires you to learn how to access JSON formatted data via an API and post data to an API to validate it. 
 
-<h3>Here it is! </h3>
-<break>
+<br>
+<a href = "https://dlesky.github.io/wordle_clone/index.html" style="color:blue"> Click here to access the game on its own page </a>
+<br>
+
 
 <p style="text-align:center"> <br>   
 <iframe
@@ -16,12 +18,7 @@ The final project in Brian Holt's [intro to front-end development](https://bthol
 ></iframe>
 </p>
 
-
-<a href = "https://dlesky.github.io/wordle_clone/index.html" color = "red"> Click here to access the game on its own page </a>
-<break>
-<a href = "https://github.com/dlesky/wordle_clone" color = "red"> Here is the source code </a>
-
-<break>
+<a href = "https://github.com/dlesky/wordle_clone" style = "color:red"> Click here for the source code </a>
 
 Aside from some of the CSS animations that are present in Wordle and data-tracking features, it's pretty close. At some point I would like to go back and:
 
